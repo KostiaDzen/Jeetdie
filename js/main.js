@@ -8,7 +8,7 @@ menuButton.addEventListener('click', function() {
 })
 
 // =============  <STAR> ============== 
-var startWars = document.querySelector('.history');
+const startWars = document.querySelector('.history');
 // Sets the number of stars we wish to display
 const numStars = 100;
 
@@ -24,13 +24,13 @@ for (let i = 0; i < numStars; i++) {
 
 // Gets random x, y values based on the size of the container
 function getRandomPosition() {  
-    var startWars = document.querySelector('.history');
     var y = startWars.clientWidth;
     var x = startWars.clientHeight;
     var randomX = Math.floor(Math.random()*x);
     var randomY = Math.floor(Math.random()*y);
     return [randomX,randomY];
 }
+
 // =============  <!STAR> ============== 
 
 // adaptiv-foto 

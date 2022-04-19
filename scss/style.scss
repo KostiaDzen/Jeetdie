@@ -68,38 +68,141 @@ $smb: 479.98px;
 
 // <CONTAINER SITE> =============================== */
 .container {
-    max-width: $maxWidthContainer;
-    margin: 0 auto;
-    @media (min-width: 1440px) {
-      max-width: 1350px;
-    }
-    @media (max-width: 1180px) {
-      max-width: 1075px;
-      padding: 0 10px;
-    }
-    /*@media (max-width: 1080px) {
-      max-width: 1056px;
-    }*/
-    @media (max-width: 728px) {
-      max-width: 705px;
-    }
-    @media (max-width: 375px) {
-      max-width: 320px;
-    }
+  max-width: $maxWidthContainer;
+  margin: 0 auto;
+  padding: 0 10px;
+  @media (min-width: 1440px) {
+    max-width: 1350px;
+  }
+  @media (max-width: 1180px) {
+    max-width: 1075px;
+    
+  }
+  /*@media (max-width: 1080px) {
+    max-width: 1056px;
+  }*/
+  @media (max-width: 728px) {
+    max-width: 705px;
+  }
+  @media (max-width: 375px) {
+    max-width: 320px;
+  }
 }
 // </CONTAINER SITE> =============================== */
+
+// <BORDER GRADIENT> =================================
+.top {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, rgba(41, 193, 214, 0) 0%, rgba(41, 193, 214, 0.26) 69.1%, rgba(133, 255, 234, 0.39) 100%);
+
+}
+
+.bottom {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, rgba(41, 193, 214, 0) 0%, rgba(41, 193, 214, 0.26) 69.1%, rgba(133, 255, 234, 0.39) 100%);
+
+}
+
+.left {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  height: auto;
+  max-height: 100%;
+  width: 2px;
+  background: linear-gradient(270deg, rgba(41, 193, 214, 0) 0%, rgba(41, 193, 214, 0.26) 69.1%, rgba(133, 255, 234, 0.39) 100%);
+}
+
+.right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  height: auto;
+  max-height: 100%;
+  width: 2px;
+  background: linear-gradient(270deg, rgba(41, 193, 214, 0) 0%, rgba(41, 193, 214, 0.26) 69.1%, rgba(133, 255, 234, 0.39) 100%);
+}
+
+// </BORDER GRADIENT> =================================
+
+// <STYLE TITLE> ======================================
+.title {
+  display: inline-block;
+  background: radial-gradient(100% 460.9% at 100% 100%, rgba(206, 101, 255, 0) 0%, #FF8888 100%), #FFFFFF;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  font-family: "bebas_kai";
+  font-weight: 400;
+  font-size: 96px;
+  line-height: 1;
+  text-transform: uppercase;
+  &.green {
+    background: radial-gradient(100% 1111.91% at 100% 50%, #B2F6FF 0%, rgba(38, 166, 141, 0) 50%, #B2F6FF 100%), #FFFFFF;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+  @media (max-width:729px) {
+    font-size: 86px;
+  }
+  @media (max-width:375px) {
+    font-size: 64px;
+  }
+}
+// </STYLE TITLE> =====================================
+
+// <STYLE BUTTON> =====================================
+.btn {
+  display: inline-block;
+  background: linear-gradient(270deg, rgba(51, 134, 120, 0.65) 0%, rgba(41, 193, 214, 0.065) 35.55%, rgba(41, 193, 214, 0.065) 61.81%, rgba(51, 134, 120, 0.65) 100%);
+  box-shadow: inset 0px 0px 16px rgb(73 214 171 / 40%);
+  text-transform: uppercase;
+  color: #FFFFFF;
+  text-align: center;
+  cursor: pointer;
+}
+// </STYLE BUTTON> =====================================
+
 body {
-    font-family: $fontFamily, sans-serif;
+  font-family: $fontFamily, sans-serif;
 }
 
 .header {
   background-image: url(../img/header/Union.svg), url(../img/header/Background.png);
-  background-position: right 51% top, center bottom;
+  background-position: right 50.5% top, center bottom;
   background-size: auto 175px, cover;
   background-repeat: no-repeat, no-repeat;
   height: 100vh;
   position: relative;
   z-index: 1;
+  min-height: 1200px;
+  @media (max-width: 852px) {
+    background-image: url(../img/header/header__top/header__top2.png), url(../img/header/header__top/Union.svg), url(../img/header/Background.png);
+    background-position: right 51% top, 100% -8%, center bottom;
+    background-size: auto 175px, contain, cover;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+  }
+  @media (max-width: 580px) {
+    background-position: right 49% top, 100% -8%, center bottom;
+    background-size: 100% 175px, contain, cover;
+  }
+  @media (max-width: 385px) {
+    background-position: right 49% top, 100% -8%, center bottom;
+    background-size: 380px 175px, contain, cover;
+  }
   &__top {
     display: flex;
     align-items: center;
@@ -118,6 +221,9 @@ body {
     &:first-child {
       padding-left: 60px;
       position: relative;
+      @media (max-width: 580px) {
+        padding-left: 15px;
+      }
     }
     &:nth-child(2) {
       flex: 1 1 auto;
@@ -172,16 +278,21 @@ body {
     align-items: center;
     @media (max-width: 853px) {
       width: 142px;
+      bottom: -17px;
     }
     &-png img{
-      width: 110px;
-      height: 110px;
+      width: 100px;
+      height: 100px;
+      @media (max-width: 853px) {
+        width: 93px;
+        height: 93px;
+      }
     }
     &-text {
       margin-top: 10px;
-      @media (max-width: 853px) {
+      /*@media (max-width: 853px) {
         margin-top: 14px;
-      }
+      }*/
       span {
         font-family: 'feijoa'; 
         font-size: 16px;
@@ -194,34 +305,48 @@ body {
         @media (max-width: 853px) {
           font-size: 12px;
         }
+        @media (max-width: 512px) {
+          font-size: 12px;
+        }
+        
+        @media (max-width: 428px) {
+          font-size: 10px;
+        }
       }
     }
   }
   &__btn {
+    &-border {
+      display: inline-block;
+      position: relative;
+    }
     @media (max-width: 853px) {
       display: flex;
       justify-content: flex-end;
-      padding-right: 30px;
+      margin-right: 30px;
+    }
+    @media (max-width: 580px) {
+      margin-right: 15px;
+    }
+    @media (max-width: 375px) {
+      display: none;
     }
     a {
-      display: inline-block;
-      background: linear-gradient(270deg, rgba(51, 134, 120, 0.65) 0%, rgba(41, 193, 214, 0.065) 35.55%, rgba(41, 193, 214, 0.065) 61.81%, rgba(51, 134, 120, 0.65) 100%);
-      box-shadow: inset 0px 0px 16px rgba(73, 214, 171, 0.4);
-      font-weight: 500;
       font-size: 12px;
       line-height: 15px;
       /* identical to box height */
       letter-spacing: 0.03em;
-      text-transform: uppercase;
-      color: #FFFFFF;
       padding: 12px 24px;
-      text-align: center;
       @media (max-width: 953px) {
         margin-right: 60px;
       }
       @media (max-width: 853px) {
         font-size: 10px;
         margin-right: 0;
+      }
+      @media (max-width: 580px) {
+        padding: 7px 10px;
+        font-size: 8px;
       }
     }
   }
@@ -241,7 +366,7 @@ body {
   backdrop-filter: blur(30px);
   width: 355px;
   padding: 45px 60px 0 45px;
-  transform: translateY(-150%);
+  transform: translateY(-200%);
   /* Note: backdrop-filter has minimal browser support */
   transition: all .5s;
   &.active {
@@ -371,7 +496,7 @@ body {
 }
 
 /* Set the animation & hide the logo */
-.logo {    
+/*.logo {    
   position: absolute;
   top: 20%;
   left: 45%;
@@ -383,10 +508,9 @@ body {
 
 .logo svg {
   width: inherit;
-}
-
+}*/
 /* Scale the logo down and maintain it centered */
-@keyframes logo {
+/*@keyframes logo {
   0% {
       width: 18em;        
       transform: scale(2.75);
@@ -401,10 +525,11 @@ body {
       transform: scale(0.1);
       width: 18em;
   }
-}
+}*/
 
-p {
+.content__text {
 color: #FFFF82;
+padding-bottom: 25px;
 }
 
 /* Set the font, lean the board, position it */
@@ -435,7 +560,7 @@ top: 0;
 
 /* Set the scrolling animation and position it */
 #content {
-animation: scroll 100s linear 16s;
+animation: scroll 100s linear 5s;
 position: absolute;
 top: 100%;
 }
@@ -446,10 +571,10 @@ text-align: center;
 
 @keyframes scroll {
   0% {
-      top: 100%;
+    top: 100%;
   }
   100% {
-      top: -170%;
+    top: -170%;
   }
 }
 
@@ -479,9 +604,9 @@ text-align: center;
     flex-wrap: wrap;
   }
   &__item {
-    flex:1 1 50%;
+    flex: 1 0 50%;
     @media (max-width: 1024px) {
-      flex:1 1 100%;
+      flex: 1 0 100%;
     }
   }
   &__img {
@@ -497,7 +622,6 @@ text-align: center;
       padding: 0;
     }
     &-title {
-      display: inline-block;
       padding-top: 8px;
       position: relative;
       margin-bottom: 24px;
@@ -513,17 +637,6 @@ text-align: center;
         border-radius: 3px;
       }
       &-red {
-        display: inline-block;
-        background: radial-gradient(100% 460.9% at 100% 100%, rgba(206, 101, 255, 0) 0%, #FF8888 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */, #FFFFFF;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        text-fill-color: transparent;
-        font-family: 'bebas_kai'; 
-        font-weight: 400;
-        font-size: 96px;
-        line-height: 1;
-        text-transform: uppercase;
         position: relative;
         padding-bottom: 8px;
         @media (max-width: 540px) {
@@ -572,21 +685,7 @@ text-align: center;
   &__title {
     margin-bottom: 24px;
     h2 {
-      text-align: center;
-      display: inline-block;
       padding: 4px 0;
-      font-family: 'bebas_kai'; 
-      font-size: 96px;
-      line-height: 1;
-      /* identical to box height, or 100% */
-      display: flex;
-      align-items: center;
-      letter-spacing: 0.03em;
-      background: radial-gradient(100% 1111.91% at 100% 50%, #B2F6FF 0%, rgba(38, 166, 141, 0) 50%, #B2F6FF 100%), #FFFFFF;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-fill-color: transparent;
       position: relative;
       &::after {
         content: '';
@@ -636,9 +735,7 @@ text-align: center;
   }
   &__column {
     width: 250px;
-    min-height: 345px;
-    position: relative;
-    z-index: 3;
+    min-height: 345px;  
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -658,15 +755,28 @@ text-align: center;
       letter-spacing: 0.05em;
       text-transform: uppercase;
       text-align: center;
-      position: relative;
-      z-index: 3;
     }
     &-bg {
-      position: absolute;
-      z-index: 1;
-      top: -160px;
-      left: -145px;
-      bottom: 0;
+      background-size: cover;
+      background-position: top center;
+      background-repeat: no-repeat;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 250px;
+      width: 100%;
+      &.bg1 {
+        background-image: url(../img/secret/01.png);
+        height: 375px;
+      }
+      &.bg2 {
+        background-image: url(../img/secret/02.png);
+        height: 300px;      
+      }
+      &.bg3 {
+        background-image: url(../img/secret/03.png);
+        height: 375px;
+      }
     }
   }
 }
@@ -733,18 +843,6 @@ text-align: center;
       }
     }
     &-text {
-      font-family: 'bebas_kai';
-      font-style: normal;
-      font-weight: 400;
-      font-size: 96px;
-      line-height: 1;
-      /* identical to box height, or 100% */
-      letter-spacing: 0.03em;
-      background: radial-gradient(100% 1111.91% at 100% -49.1%, rgba(38, 166, 141, 0) 0%, #B2F6FF 100%), #FFFFFF;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-fill-color: transparent;
       position: relative;
       padding-bottom: 8px;
       &::after {
@@ -808,12 +906,181 @@ text-align: center;
   } 
 }
 
+.gradiation {
+  padding: 150px 0 150px 0;
+  background: #000;
+  @media (max-width: 1440px) {
+    padding: 125px 0 120px 0;
+  }
+  @media (max-width: 1180px) {
+    padding: 50px 0 100px 0;
+  }
+  @media (max-width: 1024px) {
+    padding: 0 0 50px 0;
+  }
+  &__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media (max-width: 1024px) {
+      flex-wrap: wrap;
+    }
+  }
+  &__item {
+    flex: 1 0 50%;
+    &:first-child {
+      margin-right: -140px;
+    }
+    @media (max-width: 1024px) {
+      flex: 1 0 100%;
+      &:first-child {
+        margin-right: 0;
+      }
+    }
+  }
+  &__img {
+    display: block;
+    padding: 0 0 113% 0;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+  &__title {
+    padding-top: 8px;
+    margin-bottom: 24px;
+    position: relative;
+    max-width: 407px;
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      left: 0px;
+      top: 0px;
+      background: linear-gradient(270deg, rgba(38, 166, 136, 0) 0%, #B2F6FF 49.98%, rgba(38, 166, 136, 0) 100%);
+      border-radius: 3px;
+    }
+    &-top {
+      padding-bottom: 8px;
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        left: 0px;
+        bottom: 0px;
+        background: linear-gradient(270deg, rgba(38, 166, 136, 0) 0%, #B2F6FF 49.98%, rgba(38, 166, 136, 0) 100%);
+        border-radius: 3px;
+      }
+    }
+  }
+  &__text {
+    font-family: 'proxima_nova';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 27px;
+    /* or 135% */
+    color: #FFFFFF;
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+  }
+}
 
-.algorithm__text {
+.form {
+  padding: 33px 40px 29px 40px;
+  max-width: 546px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: radial-gradient(112.5% 177.78% at 112.5% 113.13%, rgba(101, 255, 255, 0.4165) 0%, rgba(101, 181, 255, 0.2125) 68.43%, rgba(114, 123, 199, 0.085) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  box-shadow: 10px 0px 24px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(30px);
+  position: relative;
+  @media (max-width: 1024px) {
+    display: none;
+  }
+  &.form2 {
+    display: none;
+    @media (max-width: 1024px) {
+      display: block;
+      max-width: 530px;
+      margin: 0 auto;
+    }
+  }
+
+  form {
+    max-width: 466px;
+    width: 100%;
+  }
+  &__title {
+    width: 282px;
+    position: relative;
+    margin: 0 auto 24px auto;
+    @media (max-width: 375px) {
+      width: 207px;
+    }
+    h2 {
+      padding-bottom: 8px;
+      font-size: 48px;
+      line-height: 1.17;
+      text-align: center; 
+      @media (max-width: 375px) {
+        font-size: 38px;
+      }
+    }
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      left: 0px;
+      bottom: 0px;
+      background: linear-gradient(270deg, rgba(38, 166, 136, 0) 0%, #B2F6FF 49.98%, rgba(38, 166, 136, 0) 100%);
+      border-radius: 3px;
+    }
+  }
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+  &__input {
+    background: linear-gradient(270deg, rgba(41, 193, 214, 0) 0%, rgba(41, 193, 214, 0.26) 69.1%, rgba(133, 255, 234, 0.39) 100%);
+    font-family: 'proxima_nova';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.22;
+    /* identical to box height */
+    color: #FFFFFF;
+    padding: 8px 12px;
+  }
+  &__border {
+    position: relative;
+  }
+  &__btn {
+    width: 121px;
+    padding: 12px 24px;
+  }
 }
-.algorithm__img {
+
+.gradiation__text {
 }
-.algorithm__img-pc {
+.gradiation__form {
 }
-.algorithm__img-smb {
+.form {
+}
+.form__input {
+}
+.input {
 }

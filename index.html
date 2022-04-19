@@ -22,7 +22,7 @@
         <div class="header__item">
           <div class="header__logo">
             <div class="header__logo-png">
-              <img src="img/header/logo.png" alt="logo">
+              <img src="img/header/logo/logo2.png" alt="logo">
             </div>
             <div class="header__logo-text">
               <span>JEETDIE ACADEMY</span>
@@ -31,7 +31,13 @@
         </div>
         <div class="header__item">
           <div class="header__btn">
-            <a href="#">Join the academy</a>
+            <div class="header__btn-border">
+              <a class="btn" href="#">Join the academy</a>
+              <div class="header__btn-line top"></div>
+              <div class="header__btn-line right"></div>
+              <div class="header__btn-line bottom"></div>
+              <div class="header__btn-line left"></div>
+            </div>
           </div>
         </div>
         <div class="header__item">
@@ -234,11 +240,11 @@
     </header>
     <main class="main">
       <section class="history">
-        <section class="intro">
+        <!-- <section class="intro">
           A long time ago, in a galaxy far,<br> far away....
-        </section>
+        </section> -->
         
-        <section class="logo">
+        <!-- <section class="logo">
               <svg version="1.0" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
           width="693.615px" height="419.375px" viewBox="0 0 693.615 419.375" enable-background="new 0 0 693.615 419.375"
           xml:space="preserve">
@@ -327,18 +333,33 @@
             </g>
           </g>
         </svg>
-        </section>
+        </section> -->
         
         <!-- Change the text to your liking -->
         <div id="board">  
           <div id="content">
-            <p id="title">Episode I</p>
+            <!-- <p id="title">Episode I</p>
             <p id="subtitle">THE CODER'S MENACE</p>
-            <br>
+            <br> -->
             <!-- And make it cheesy ! -->
-            <p>Turmoil has engulfed the Galactic Republic as Christopher Kade finishes studying to become a master in his trade.</p>        
+            <p class="content__text">It is a period of civil wars on the bear market. 
+              A brave alliance of underground diamond-hand financial freedom fighters have challenged the tyranny and oppression  of  the  evil  JEET'S  EMPIRE. </p>
+
+            <p class="content__text">
+              Striking from a fortress hidden among the billion tokens of the blockchain galaxy, 
+              rebel wallets have won their first victory in a battle with the p              owerful Jeet's Dumpfleet. 
+              The JEET'S EMPIRE fears that another defeat could bring a thousands more holders into the rebellion,
+              and Imperial Jeet's control over the crypto galaxy would  be  lost  forever.
+            </p>
+              
+            <p class="content__text">
+              To crush the rebellion once and for all, 
+              the JEET'S EMPIRE is constructing a sinister new dump station. 
+              Powerful enough to destroy an entire blockchain, 
+              its completion spells certain doom for the  champions  of financial  freedom .... 
+            </p>     
           </div>  
-        </div>
+        </div>            
       </section>
       <section class="mission">
         <div class="mission__red"></div>
@@ -354,7 +375,7 @@
                 <div class="mission__item">
                   <div class="mission__our">
                     <div class="mission__our-title">
-                      <div class="mission__our-title-red"><h2>our mission</h2></div>
+                      <div class="mission__our-title-red"><h2 class="title">our mission</h2></div>
                     </div>
                     <div class="mission__our-text">
                       is to unite all concerned holders into a single force that will finally stop this unjust tyranny of jeets. 
@@ -378,7 +399,7 @@
         <div class="container">
           <div class="secret__inner">
             <div class="secret__title">
-              <div class="secret__title-inner"><h2>Secret Rebellion Weapon</h2></div>
+              <div class="secret__title-inner"><h2 class="title green">Secret Rebellion Weapon</h2></div>
             </div>
             <div class="secret__text">
               <p>The rebellion has developed a secret weapon to destroy the Jeet Empire. 
@@ -390,31 +411,28 @@
           </div>
           <div class="secret__box">
             <div class="secret__column">
-              <div class="secret__column-bg">
-                <img src="img/secret/01.png" alt="01">
+              <div class="secret__column-bg bg1">
+                <div class="secret__column-object">
+                  <img src="img/icons/secret/01.svg" alt="01">
+                </div>
+                <div class="secret__column-subtitle">unique software</div>
               </div>
-              <div class="secret__column-object">
-                <img src="img/icons/secret/01.svg" alt="01">
-              </div>
-              <div class="secret__column-subtitle">unique software</div>
             </div>
             <div class="secret__column">
-              <div class="secret__column-bg">
-                <img src="img/secret/02.png" alt="02">
+              <div class="secret__column-bg bg2">
+                <div class="secret__column-object">
+                  <img src="img/icons/secret/02.svg" alt="02">
+                </div>
+                <div class="secret__column-subtitle">Backed by diamond hands</div>
               </div>
-              <div class="secret__column-object">
-                <img src="img/icons/secret/02.svg" alt="02">
-              </div>
-              <div class="secret__column-subtitle">Backed by diamond hands</div>
             </div>
             <div class="secret__column">
-              <div class="secret__column-bg">
-                <img src="img/secret/03.png" alt="03">
+              <div class="secret__column-bg bg3">
+                <div class="secret__column-object">
+                  <img src="img/icons/secret/03.svg" alt="03">
+                </div>
+                <div class="secret__column-subtitle">Suppress Jeets</div>
               </div>
-              <div class="secret__column-object">
-                <img src="img/icons/secret/03.svg" alt="03">
-              </div>
-              <div class="secret__column-subtitle">Suppress Jeets</div>
             </div>
           </div>
         </div>
@@ -427,7 +445,7 @@
                 <span>USECASE</span>
               </div>
               <div class="algorithm__title-text">
-                Jeetdie Integrated Algorithm
+                <h2 class="title green">Jeetdie Integrated Algorithm</h2>
               </div>
             </div>
             <div class="algorithm__text">
@@ -453,6 +471,107 @@
                 chosen before deployment. Deployment of the contract will require no knowledge of solidity - We have
                 taken care of everything!</p>
             </div>
+          </div>
+        </div>
+      </section>
+      <section class="gradiation">
+        <div class="container">
+          <div class="gradiation__inner">
+            <div class="gradiation__item">
+              <div class="gradiation__img ibg">
+                <img src="img/gradiation/gradiation.png" alt="gradiation">
+              </div>
+            </div>
+            <div class="gradiation__item">
+              <div class="gradiation__content">
+                <div class="gradiation__title">
+                  <div class="gradiation__title-top">
+                    <h2 class="title green">Graduation</h2>
+                  </div>
+                </div>
+                <div class="gradiation__text">
+                  <p>Everyone who has held the token for a month without a Sell automatically 
+                    becomes an honorable graduate of our Jeetdie Academy and receives the rank 
+                    of Diamond Rebel. Each graduate is awarded 2 secret codes that allow the 
+                    graduate to activate a 0% buy and sell tax for 2 transactions - Diamond 
+                    rebels are honorary warriors who deserve it. A minimum amount of $JEETDIE
+                    equivalent to 1BNB needs to be purchased and held for 30 days in order to
+                    be eligible for graduation. The amount is recorded at time of purchase so
+                    even of your amount goes below 1bnb after purchase you will still have 
+                    the ability to graduate</p>
+                </div>
+                <div class="gradiation__form form">
+                  <form action="#">
+                    <div class="form__title">
+                      <h2 class="title green">Activate 0% Tax</h2>
+                    </div>
+                    <div class="form__box">
+                      <input type="email" class="form__input input" placeholder="Wallet Address">
+                      <div class="form__box-line-top top"></div>
+                      <div class="form__box-line-right right"></div>
+                      <div class="form__box-line-bottom bottom"></div>
+                      <div class="form__box-line-left left"></div>
+                    </div>
+                    <div class="form__box">
+                      <input type="password" class="form__input input" placeholder="Secret Code">
+                      <div class="form__box-line-top top"></div>
+                      <div class="form__box-line-right right"></div>
+                      <div class="form__box-line-bottom bottom"></div>
+                      <div class="form__box-line-left left"></div>
+                    </div>
+                    <div class="form__box">
+                      <div class="form__border">
+                        <input type="submit" value="Activate" class="form__btn btn">
+                        <div class="form__box-line-top top"></div>
+                        <div class="form__box-line-right right"></div>
+                        <div class="form__box-line-bottom bottom"></div>
+                        <div class="form__box-line-left left"></div>
+                      </div>
+                    </div>
+                  </form>
+                  <div class="form__line-top top"></div>
+                  <div class="form__line-right right"></div>
+                  <div class="form__line-bottom bottom"></div>
+                  <div class="form__line-left left"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="gradiation__form form form2">
+            <form action="#">
+              <div class="form__title">
+                <h2 class="title green">Activate 0% Tax</h2>
+              </div>
+              <div class="form__box">
+                <input type="email" class="form__input input" placeholder="Wallet Address">
+                <div class="form__box-line-top top"></div>
+                <div class="form__box-line-right right"></div>
+                <div class="form__box-line-bottom bottom"></div>
+                <div class="form__box-line-left left"></div>
+              </div>
+              <div class="form__box">
+                <input type="password" class="form__input input" placeholder="Secret Code">
+                <div class="form__box-line-top top"></div>
+                <div class="form__box-line-right right"></div>
+                <div class="form__box-line-bottom bottom"></div>
+                <div class="form__box-line-left left"></div>
+              </div>
+              <div class="form__box">
+                <div class="form__border">
+                  <input type="submit" value="Activate" class="form__btn btn">
+                  <div class="form__box-line-top top"></div>
+                  <div class="form__box-line-right right"></div>
+                  <div class="form__box-line-bottom bottom"></div>
+                  <div class="form__box-line-left left"></div>
+                </div>
+              </div>
+            </form>
+            <div class="form__line-top top"></div>
+            <div class="form__line-right right"></div>
+            <div class="form__line-bottom bottom"></div>
+            <div class="form__line-left left"></div>
           </div>
         </div>
       </section>
