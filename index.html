@@ -602,10 +602,34 @@
                 <h2 class="title green">Jeetdie path</h2>
               </div>
             </div>
-            <div class="path__slider swiper">
-              <div class="path__wrapper swiper-wrapper">
-                <div class="path__item swiper-slide">
-                  <div class="path__column">
+            <div class="path__number ">
+              <div class="path__number-left  btn--left"></div>
+              <div class="path__number-right btn--right"></div>
+              <div class="app2">
+                <div class="cards__wrapper2">
+                  
+                  <div class="card2 previous--card2"><div class="previous--image2"><img class=" " src="img/icons/path/Episode_III.svg" alt="III"></div></div>
+                  <div class="card2 current--card2"><div class="current--image2"><img class=" " src="img/icons/path/Episode_I.svg" alt="I"></div></div>
+                  <div class="card2 next--card2"><div class="next--image2"><img class=" " src="img/icons/path/Episode_II.svg" alt="II"></div></div>
+                
+                </div>
+                <div class="app__bg2">
+                  <div class="current--image2">
+                    
+                  </div>
+                  <div class="next--image2">
+                    
+                  </div>
+                  <div class="previous--image2">
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="path__slider app">
+              <div class="path__wrapper cards__wrapper">
+                <div class="path__item card current--card">
+                  <div class="path__column current--image">
                     <div class="path__episode episode1">
                       <span>Episode I</span>
                     </div>
@@ -629,8 +653,8 @@
                     <div class="path__border border__bottom-slider"></div>
                   </div>
                 </div>
-                <div class="path__item swiper-slide">
-                  <div class="path__column">
+                <div class="path__item card next--card">
+                  <div class="path__column next--image">
                     <div class="path__episode episode2">
                       <span>Episode II</span>
                     </div>
@@ -656,8 +680,8 @@
                     <div class="path__border border__bottom-slider"></div>
                   </div>
                 </div>
-                <div class="path__item swiper-slide">
-                  <div class="path__columngit">
+                <div class="path__item card previous--card">
+                  <div class="path__column previous--image">
                     <div class="path__episode episode3">
                       <span>Episode III</span>
                     </div>
@@ -680,6 +704,19 @@
                   </div>
                 </div>
               </div>
+              
+              <div class="app__bg">
+                <div class="current--image">
+                  
+                </div>
+                <div class="next--image">
+                  
+                </div>
+                <div class="previous--image">
+                  
+                </div>
+              </div>
+            </div>
             </div>
           </div>
         </div>
@@ -1024,6 +1061,10 @@
     </div>
   </div>
 </main>
+
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js"></script>
+
   <script src="js/swiper-bundle.min.js"></script>
   <script src="js/main.js"></script>
 </body>

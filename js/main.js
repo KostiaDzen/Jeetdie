@@ -67,25 +67,389 @@ function clickCopy() {
 }
 
 // SLIDER
-const swiper = new Swiper('.swiper', {
+/*const swiper = new Swiper('.swiper', {
     //new class
-    slidesPerView: 3,
+    paginationClickable: true,
     effect: 'coverflow',
-    grabCursor: true,
-    slidesPerGroup: 1,
-    centeredSlides: true,
-    slidesPerColumn: 1,
-    coverflowEffect: {
-         rotate: 0,
-        //stretch: 100,
-        //depth: 1000,
-        //modifier: 10,
-        //slideShadows: true,
-    },
     loop: true,
-    // arrows
+    centeredSlides: true,
+    slidesPerView: 3,
+    coverflow: {
+        rotate: 0,
+        stretch: 100,
+        depth: 150,
+        modifier: 0,
+        slideShadows : true,
+    },
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
+});*/
+
+
+//
+const { gsap} = window;
+
+const buttons = {
+  prev: document.querySelector(".btn--left"),
+  next: document.querySelector(".btn--right"),
+};
+const cardsContainerEl = document.querySelector(".cards__wrapper");
+const appBgContainerEl = document.querySelector(".app__bg");
+
+const cardsContainerEl2 = document.querySelector(".cards__wrapper2");
+const appBgContainerEl2 = document.querySelector(".app__bg2");
+
+buttons.next.addEventListener("click", () => {
+  swapCards("right");
+  swapCards2("right");
 });
+
+buttons.prev.addEventListener("click", () => {
+  swapCards("left");
+  swapCards2("left");
+});
+
+function swapCards(direction) {
+  const currentCardEl = cardsContainerEl.querySelectorAll(".current--card");
+  const previousCardEl = cardsContainerEl.querySelectorAll(".previous--card");
+  const nextCardEl = cardsContainerEl.querySelectorAll(".next--card");
+
+  const currentBgImageEl = appBgContainerEl.querySelectorAll(".current--image");
+  const previousBgImageEl = appBgContainerEl.querySelectorAll(".previous--image");
+  const nextBgImageEl = appBgContainerEl.querySelectorAll(".next--image");
+
+  swapCardsClass();
+
+  //removeCardEvents(currentCardEl);
+
+  function swapCardsClass() {
+
+   // currentCardEl.classList.remove("current--card");
+    currentCardEl.forEach((item) => {
+        item.classList.remove("current--card")
+    });
+    //previousCardEl.classList.remove("previous--card");
+    previousCardEl.forEach((item) => {
+        item.classList.remove("previous--card")
+    });
+    //nextCardEl.classList.remove("next--card");
+    nextCardEl.forEach((item) => {
+        item.classList.remove("next--card")
+    });
+
+    //currentBgImageEl.classList.remove("current--image");
+    currentBgImageEl.forEach((item) => {
+        item.classList.remove("current--image")
+    });
+    //previousBgImageEl.classList.remove("previous--image");
+    previousBgImageEl.forEach((item) => {
+        item.classList.remove("previous--image")
+    });
+    //nextBgImageEl.classList.remove("next--image");
+    nextBgImageEl.forEach((item) => {
+        item.classList.remove("next--image")
+    });
+
+    //currentCardEl.style.zIndex = "50";
+    currentCardEl.forEach((item) => {
+        item.style.zIndex = "50"
+    });
+    //currentBgImageEl.style.zIndex = "-2";
+    currentBgImageEl.forEach((item) => {
+        item.style.zIndex = "-2"
+    });
+
+    if (direction === "right") {
+      //previousCardEl.style.zIndex = "20";
+      previousCardEl.forEach((item) => {
+        item.style.zIndex = "20"
+      });
+      //nextCardEl.style.zIndex = "30";
+      nextCardEl.forEach((item) => {
+        item.style.zIndex = "30"
+      });
+
+      //nextBgImageEl.style.zIndex = "-1";
+      nextBgImageEl.forEach((item) => {
+        item.style.zIndex = "-1"
+      });
+
+      //currentCardEl.classList.add("previous--card");
+      currentCardEl.forEach((item) => {
+        item.classList.add("previous--card")
+      });
+      //previousCardEl.classList.add("next--card");
+      previousCardEl.forEach((item) => {
+        item.classList.add("next--card")
+      });
+      //nextCardEl.classList.add("current--card");
+      nextCardEl.forEach((item) => {
+        item.classList.add("current--card")
+      });
+
+      //currentBgImageEl.classList.add("previous--image");
+      currentBgImageEl.forEach((item) => {
+        item.classList.add("previous--image")
+      });
+      //previousBgImageEl.classList.add("next--image");
+      previousBgImageEl.forEach((item) => {
+        item.classList.add("next--image")
+      });
+      //nextBgImageEl.classList.add("current--image");
+      nextBgImageEl.forEach((item) => {
+        item.classList.add("current--image")
+      });
+    } else if (direction === "left") {
+      //previousCardEl.style.zIndex = "30";
+      previousCardEl.forEach((item) => {
+        item.style.zIndex = "30"
+      });
+      //nextCardEl.style.zIndex = "20";
+      nextCardEl.forEach((item) => {
+        item.style.zIndex = "20"
+      });
+
+      //previousBgImageEl.style.zIndex = "-1";
+      previousBgImageEl.forEach((item) => {
+        item.style.zIndex = "-1"
+      });
+
+      //currentCardEl.classList.add("next--card");
+      currentCardEl.forEach((item) => {
+        item.classList.add("next--card")
+      });
+      //previousCardEl.classList.add("current--card");
+      previousCardEl.forEach((item) => {
+        item.classList.add("current--card")
+      });
+      //nextCardEl.classList.add("previous--card");
+      nextCardEl.forEach((item) => {
+        item.classList.add("previous--card")
+      });
+
+      //currentBgImageEl.classList.add("next--image");
+      currentBgImageEl.forEach((item) => {
+        item.classList.add("next--image")
+      });
+      //previousBgImageEl.classList.add("current--image");
+      previousBgImageEl.forEach((item) => {
+        item.classList.add("current--image")
+      });
+      //nextBgImageEl.classList.add("previous--image");
+      nextBgImageEl.forEach((item) => {
+        item.classList.add("previous--image")
+      });
+    }
+  }
+};
+
+function swapCards2(direction) {
+  const currentCardEl2 = cardsContainerEl2.querySelectorAll(".current--card2");
+  const previousCardEl2 = cardsContainerEl2.querySelectorAll(".previous--card2");
+  const nextCardEl2 = cardsContainerEl2.querySelectorAll(".next--card2");
+
+  const currentBgImageEl2 = appBgContainerEl2.querySelectorAll(".current--image2");
+  const previousBgImageEl2 = appBgContainerEl2.querySelectorAll(".previous--image2");
+  const nextBgImageEl2 = appBgContainerEl2.querySelectorAll(".next--image2");
+
+  swapCardsClass2();
+
+  //removeCardEvents(currentCardEl);
+
+  function swapCardsClass2() {
+
+   // currentCardEl.classList.remove("current--card");
+    currentCardEl2.forEach((item) => {
+        item.classList.remove("current--card2")
+    });
+    //previousCardEl.classList.remove("previous--card");
+    previousCardEl2.forEach((item) => {
+        item.classList.remove("previous--card2")
+    });
+    //nextCardEl.classList.remove("next--card");
+    nextCardEl2.forEach((item) => {
+        item.classList.remove("next--card2")
+    });
+
+    //currentBgImageEl.classList.remove("current--image");
+    currentBgImageEl2.forEach((item) => {
+        item.classList.remove("current--image2")
+    });
+    //previousBgImageEl.classList.remove("previous--image");
+    previousBgImageEl2.forEach((item) => {
+        item.classList.remove("previous--image2")
+    });
+    //nextBgImageEl.classList.remove("next--image");
+    nextBgImageEl2.forEach((item) => {
+        item.classList.remove("next--image2")
+    });
+
+    //currentCardEl.style.zIndex = "50";
+    currentCardEl2.forEach((item) => {
+        item.style.zIndex = "50"
+    });
+    //currentBgImageEl.style.zIndex = "-2";
+    currentBgImageEl2.forEach((item) => {
+        item.style.zIndex = "-2"
+    });
+
+    if (direction === "right") {
+      //previousCardEl.style.zIndex = "20";
+      previousCardEl2.forEach((item) => {
+        item.style.zIndex = "20"
+      });
+      //nextCardEl.style.zIndex = "30";
+      nextCardEl2.forEach((item) => {
+        item.style.zIndex = "30"
+      });
+
+      //nextBgImageEl.style.zIndex = "-1";
+      nextBgImageEl2.forEach((item) => {
+        item.style.zIndex = "-1"
+      });
+
+      //currentCardEl.classList.add("previous--card");
+      currentCardEl2.forEach((item) => {
+        item.classList.add("previous--card2")
+      });
+      //previousCardEl.classList.add("next--card");
+      previousCardEl2.forEach((item) => {
+        item.classList.add("next--card2")
+      });
+      //nextCardEl.classList.add("current--card");
+      nextCardEl2.forEach((item) => {
+        item.classList.add("current--card2")
+      });
+
+      //currentBgImageEl.classList.add("previous--image");
+      currentBgImageEl2.forEach((item) => {
+        item.classList.add("previous--image2")
+      });
+      //previousBgImageEl.classList.add("next--image");
+      previousBgImageEl2.forEach((item) => {
+        item.classList.add("next--image2")
+      });
+      //nextBgImageEl.classList.add("current--image");
+      nextBgImageEl2.forEach((item) => {
+        item.classList.add("current--image2")
+      });
+    } else if (direction === "left") {
+      //previousCardEl.style.zIndex = "30";
+      previousCardEl2.forEach((item) => {
+        item.style.zIndex = "30"
+      });
+      //nextCardEl.style.zIndex = "20";
+      nextCardEl2.forEach((item) => {
+        item.style.zIndex = "20"
+      });
+
+      //previousBgImageEl.style.zIndex = "-1";
+      previousBgImageEl2.forEach((item) => {
+        item.style.zIndex = "-1"
+      });
+
+      //currentCardEl.classList.add("next--card");
+      currentCardEl2.forEach((item) => {
+        item.classList.add("next--card2")
+      });
+      //previousCardEl.classList.add("current--card");
+      previousCardEl2.forEach((item) => {
+        item.classList.add("current--card2")
+      });
+      //nextCardEl.classList.add("previous--card");
+      nextCardEl2.forEach((item) => {
+        item.classList.add("previous--card2")
+      });
+
+      //currentBgImageEl.classList.add("next--image");
+      currentBgImageEl2.forEach((item) => {
+        item.classList.add("next--image2")
+      });
+      //previousBgImageEl.classList.add("current--image");
+      previousBgImageEl2.forEach((item) => {
+        item.classList.add("current--image2")
+      });
+      //nextBgImageEl.classList.add("previous--image");
+      nextBgImageEl2.forEach((item) => {
+        item.classList.add("previous--image2")
+      });
+    }
+  }
+};
+
+function init() {
+
+  let tl = gsap.timeline();
+
+  tl.to(cardsContainerEl.children, {
+    //delay: 0.15,
+    //duration: 0.5,
+    
+    "--card-translateY-offset": "0%",
+  })
+    .to(
+    [buttons.prev, buttons.next],
+    {
+      duration: 0.4,
+      //opacity: 1,
+      pointerEvents: "all",
+    },
+    "-=0.4"
+  )
+    .to(cardsContainerEl2.children, {
+      //delay: 0.15,
+    //duration: 0.5,
+    
+    "--card-translateY-offset": "0%",
+    })
+    .to(
+      [buttons.prev, buttons.next],
+      {
+        duration: 0.4,
+        //opacity: 1,
+        pointerEvents: "all",
+      },
+      "-=0.4"
+    );
+};
+
+const waitForImages = () => {
+  const images = [...document.querySelectorAll("img")];
+  const totalImages = images.length;
+  let loadedImages = 0;
+  const loaderEl = document.querySelector(".loader span");
+
+  gsap.set(cardsContainerEl.children, {
+    "--card-translateY-offset": "100vh",
+  });
+  gsap.set(cardsContainerEl2.children, {
+    "--card-translateY-offset": "100vh",
+  });
+  
+  gsap.set([buttons.prev, buttons.next], {
+    pointerEvents: "none",
+    //opacity: "0",
+  });
+
+  images.forEach((image) => {
+    imagesLoaded(image, (instance) => {
+      if (instance.isComplete) {
+        loadedImages++;
+  
+        if (totalImages == loadedImages) {
+          gsap.timeline()
+            .to(".loading__wrapper", {
+           // duration: 0.8,
+            //opacity: 0,
+           // pointerEvents: "none",
+          })
+            .call(() => init());
+        }
+      }
+    });
+  });
+};
+
+waitForImages();

@@ -1415,6 +1415,35 @@ h1, h2, h3, h4, h5, h6 {
 .path__title h2 {
   text-align: center;
 }
+.path__number {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  margin-bottom: 30px;
+  position: relative;
+}
+.path__number-left {
+  display: block;
+  position: absolute;
+  width: 144px;
+  height: 100%;
+  left: 32%;
+  top: 5%;
+  z-index: 5000;
+  background-color: #D02B2B;
+  opacity: 0.5;
+}
+.path__number-right {
+  display: block;
+  position: absolute;
+  width: 144px;
+  height: 100%;
+  right: 32%;
+  top: 5%;
+  z-index: 5000;
+  background-color: #D02B2B;
+  opacity: 0.5;
+}
 .path__slider {
   width: 100%;
 }
@@ -1783,5 +1812,132 @@ h1, h2, h3, h4, h5, h6 {
   width: 38px;
   height: 80px;
   margin-right: 15px;
+}
+
+:root {
+  --card-width1: 395px;
+  --card-height1: 485px;
+  --card-width2: 130px;
+  --card-height2: 130px;
+  --card-transition-duration: 800ms;
+  --card-transition-easing: ease;
+}
+
+.app {
+  /* path */
+  width: 100%;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: #fff;
+}
+
+.app2 {
+  /* path */
+  width: 100%;
+  height: 130px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: #fff;
+}
+
+.card {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) translateX(var(--card-translateX-offset)) rotateY(var(--card-rotation-offset)) scale(var(--card-scale-offset));
+  display: inline-block;
+  max-width: var(--card-width1);
+  max-height: var(--card-height1);
+  transition: transform var(--card-transition-duration) var(--card-transition-easing);
+  user-select: none;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 1;
+  transition: opacity var(--card-transition-duration) var(--card-transition-easing);
+  opacity: calc(1 - var(--opacity));
+}
+
+.card2 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) translateX(var(--card-translateX-offset)) rotateY(var(--card-rotation-offset)) scale(var(--card-scale-offset));
+  display: inline-block;
+  max-width: var(--card-width2);
+  max-height: var(--card-height2);
+  transition: transform var(--card-transition-duration) var(--card-transition-easing);
+  user-select: none;
+}
+
+.card2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 1;
+  transition: opacity var(--card-transition-duration) var(--card-transition-easing);
+  opacity: calc(1 - var(--opacity));
+}
+
+.card.current--card {
+  --current-card-rotation-offset: 0;
+  --card-translateX-offset: 0;
+  --card-rotation-offset: var(--current-card-rotation-offset);
+  --card-scale-offset: 1.2;
+  --opacity: 0.8;
+}
+
+.card.previous--card {
+  --card-translateX-offset: calc(-1 * var(--card-width1) * 1.1);
+  --card-rotation-offset: 25deg;
+}
+
+.card.next--card {
+  --card-translateX-offset: calc(var(--card-width1) * 1.1);
+  --card-rotation-offset: -25deg;
+}
+
+.card.previous--card, .card.next--card {
+  --card-scale-offset: 0.9;
+  --opacity: 0.4;
+}
+
+.card2.current--card2 {
+  --current-card-rotation-offset: 0;
+  --card-translateX-offset: 0;
+  --card-rotation-offset: var(--current-card-rotation-offset);
+  --card-scale-offset: 1.2;
+  --opacity: 0.8;
+}
+
+.card2.previous--card2 {
+  --card-translateX-offset: calc(-1 * var(--card-width2) * 1.1);
+  --card-rotation-offset: 25deg;
+}
+
+.card2.next--card2 {
+  --card-translateX-offset: calc(var(--card-width2) * 1.1);
+  --card-rotation-offset: -25deg;
+}
+
+.card2.previous--card2, .card2.next--card2 {
+  --card-scale-offset: 0.9;
+  --opacity: 0.4;
 }
 /*# sourceMappingURL=style.css.map */
