@@ -1219,10 +1219,10 @@ text-align: center;
   &__number {
     display: flex;
     justify-content: center;
-    gap: 35px;
-    margin-bottom: 30px;
-    position: relative;
-    &-left {
+    margin: 0 auto 30px auto;
+    position: relative; 
+
+    /*&-left {
       display: block;
       position: absolute;
       width: 144px;
@@ -1230,8 +1230,9 @@ text-align: center;
       left: 32%;
       top: 5%;
       z-index: 5000;
-      //background-color: #D02B2B;
+      background-color: #D02B2B;
       opacity: 0.5;
+      cursor: pointer;
     }
     &-right {
       display: block;
@@ -1241,9 +1242,10 @@ text-align: center;
       right: 32%;
       top: 5%;
       z-index: 5000;
-      //background-color: #D02B2B;
+      background-color: #D02B2B;
       opacity: 0.5;
-    }
+      cursor: pointer;
+    }*/
   }
   &__slider {
     width: 100%;
@@ -1636,6 +1638,7 @@ text-align: center;
   height: 130px;
   display: flex;
   justify-content: center;
+  gap: 35px;
   align-items: center;
   position: relative;
   color: #fff;
@@ -1653,7 +1656,7 @@ text-align: center;
   user-select: none;
 }
 
-.card::before {
+.card::after {
   content: "";
   position: absolute;
   left: 0;
@@ -1679,7 +1682,7 @@ text-align: center;
 }
 
 
-.card2::before {
+.card2::after {
   content: "";
   position: absolute;
   left: 0;
