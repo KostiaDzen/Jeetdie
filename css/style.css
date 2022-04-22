@@ -1430,7 +1430,6 @@ h1, h2, h3, h4, h5, h6 {
   left: 32%;
   top: 5%;
   z-index: 5000;
-  background-color: #D02B2B;
   opacity: 0.5;
 }
 .path__number-right {
@@ -1441,7 +1440,6 @@ h1, h2, h3, h4, h5, h6 {
   right: 32%;
   top: 5%;
   z-index: 5000;
-  background-color: #D02B2B;
   opacity: 0.5;
 }
 .path__slider {
