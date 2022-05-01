@@ -593,7 +593,6 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: calc(100vh - 130px);
   background: linear-gradient(331.73deg, rgba(0, 0, 0, 0.1) -1.55%, #000000 115.15%);
   box-shadow: 10px 0px 24px rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(30px);
@@ -749,7 +748,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Set the font, lean the board, position it */
 #board {
   font-family: Century Gothic, CenturyGothic, AppleGothic, sans-serif;
-  transform: perspective(250px) rotateX(11deg);
+  transform: perspective(400px) rotateX(15deg);
   transform-origin: 50% 95%;
   text-align: justify;
   position: absolute;
