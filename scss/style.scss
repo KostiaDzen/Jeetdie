@@ -216,6 +216,7 @@ $smb: 479.98px;
 // </STYLE BUTTON> =====================================
 
 body {
+  overflow-x: hidden; 
   font-family: $fontFamily, sans-serif;
   position: relative;
 }
@@ -232,7 +233,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 100vh;
   position: relative;
   z-index: 1;
-  min-height: 900px;
+  min-height: 1200px;
   @media (max-width: 852px) {
     background-image: url(../img/header/header__top/header__top2.png), url(../img/header/header__top/Union.svg), url(../img/header/Background.png);
     background-position: right 51% top, 100% -8%, center bottom;

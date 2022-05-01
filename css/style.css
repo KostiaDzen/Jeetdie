@@ -26,7 +26,6 @@ nav, footer, header, aside {
 }
 
 html, body {
-  overflow: hidden;
   height: 100%;
   width: 100%;
   font-size: 100%;
@@ -360,6 +359,7 @@ a {
 }
 
 body {
+  overflow-x: hidden;
   font-family: "proxima_nova", sans-serif;
   position: relative;
 }
@@ -376,7 +376,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 100vh;
   position: relative;
   z-index: 1;
-  min-height: 900px;
+  min-height: 1200px;
 }
 @media (max-width: 852px) {
   .header {
