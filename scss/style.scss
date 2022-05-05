@@ -88,9 +88,7 @@ $smb: 479.98px;
     max-width: 320px;
   }
 }
-// </CONTAINER SITE> =============================== */
-
-
+// </CONTAINER SITE> =============================== //
 
 // <BORDER GRADIENT> =================================
 .top {
@@ -332,6 +330,7 @@ h1, h2, h3, h4, h5, h6 {
       z-index: 1;
       transform: translateX(-50%);
       @media (max-width: 375px) {
+        transform: translateX(-100%);
         top: 104px;
       }
     }
@@ -507,8 +506,24 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   overflow: auto;
   height: 80vh;
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    //background: rgba(0,0,0,0.25);
+    background: #333333;
+    opacity: 0.8;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #0d0d0d;
+    border-radius: 8px;
+  }
   &.active {
     transform: translateX(50%);
+    @media (max-width: 375px) {
+      width: 100%;
+      transform: translateX(100%);
+    }
   }
   &-top {
     h5 {
@@ -1753,10 +1768,10 @@ text-align: center;
 
 .next--image2 img, .previous--image2 img {
   width: 123px;
-  height: 123px;
+  height: 112px;
   @media (max-width: 610px) {
     width: 93px;
-    height: 93px;
+    height: 84px;
   }
   @media (max-width: 375px) {
     width: 65px;
