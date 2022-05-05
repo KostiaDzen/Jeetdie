@@ -7,32 +7,6 @@ menuButton.addEventListener('click', function() {
     menuButton.classList.toggle('active')
 })
 
-// =============  <STAR> ============== 
-const startWars = document.querySelector('.history');
-// Sets the number of stars we wish to display
-const numStars = 100;
-
-// For every star we want to display
-for (let i = 0; i < numStars; i++) {
-    let star = document.createElement("div");  
-    star.className = "star";
-    var xy = getRandomPosition();
-    star.style.top = xy[0] + 'px';
-    star.style.left = xy[1] + 'px';
-    startWars.append(star);
-}
-
-// Gets random x, y values based on the size of the container
-function getRandomPosition() {  
-    var y = startWars.clientWidth;
-    var x = startWars.clientHeight;
-    var randomX = Math.floor(Math.random()*x);
-    var randomY = Math.floor(Math.random()*y);
-    return [randomX,randomY];
-}
-
-// =============  <!STAR> ============== 
-
 // adaptiv-foto 
 function ibg(){
     let ibg = document.querySelectorAll('.ibg');
@@ -48,22 +22,36 @@ ibg();
 // <COPY_LINK> =========================
 const copy = document.querySelector('.copy');
 const copyLink = document.querySelector('.contract__column-container');
-const copyBlock = document.querySelector('.copy__block');
+const copyBlock = document.querySelector('.copied__block');
+const copyBlock2 = document.querySelector('.copied__block2');
 
+//copyBlock2.addEventListener('mouseover', leaveCopy);
 copy.addEventListener('click', clickCopy);
+copy.addEventListener('mouseover', hoverCopy);
+copy.addEventListener('mouseleave', leaveCopy);
+
+
+function hoverCopy() {
+  copyBlock2.style.display = 'flex';
+}
+
+function leaveCopy() {
+  copyBlock2.style.display = 'none';
+}
 
 function clickCopy() {
-    navigator.clipboard.writeText(copyLink.innerText);
-    copyBlock.classList.toggle('active');
-    if (!copyBlock.classList.contains('active')) {
-        window.clearTimeout(copyBlock);
-        copyBlock.style.display = 'flex';
-        copyBlock.style.transition = 'opacity 0.5s ease-in-out';
-    } else {
-        //copyBlock.style.transition = 'opacity 1s ease-in 0s';
-        copyBlock.style.transition = ' none';
-        setTimeout(clickCopy, 500);
-    }
+  copyBlock2.style.display = 'none';
+  navigator.clipboard.writeText(copyLink.innerText);
+  copyBlock.classList.toggle('active');
+  if (!copyBlock.classList.contains('active')) {
+      window.clearTimeout(copyBlock);
+      copyBlock.style.display = 'flex';
+      copyBlock.style.transition = 'opacity 0.5s ease-in-out';
+  } else {
+      //copyBlock.style.transition = 'opacity 1s ease-in 0s';
+      copyBlock.style.transition = ' none';
+      setTimeout(clickCopy, 500);
+  }
 }
 
 
